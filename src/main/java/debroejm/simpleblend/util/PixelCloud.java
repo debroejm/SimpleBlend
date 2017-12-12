@@ -136,7 +136,7 @@ public class PixelCloud implements Comparable<PixelCloud> {
      * @return Float array representing minimum point values
      */
     public Color getMinimumColor() {
-        return new Color(min_color[0], min_color[1], min_color[2]);
+        return Color.ofRGB(min_color[0], min_color[1], min_color[2]);
     }
 
     /**
@@ -145,7 +145,7 @@ public class PixelCloud implements Comparable<PixelCloud> {
      * @return Float array representing maximum point values
      */
     public Color getMaximumColor() {
-        return new Color(max_color[0], max_color[1], max_color[2]);
+        return Color.ofRGB(max_color[0], max_color[1], max_color[2]);
     }
 
     /**
@@ -154,7 +154,7 @@ public class PixelCloud implements Comparable<PixelCloud> {
      * @return Float array representing average point values
      */
     public Color getAverageColor() {
-        return new Color(average_color[0], average_color[1], average_color[2]);
+        return Color.ofRGB(average_color[0], average_color[1], average_color[2]);
     }
 
     public int getSize() {

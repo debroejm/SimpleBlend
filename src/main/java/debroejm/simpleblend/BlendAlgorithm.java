@@ -57,7 +57,7 @@ public interface BlendAlgorithm {
             resultArray[i] = clamp(blendVal, 0.0f, 1.0f);
         }
         resultArray[0] = bottomArray[0];
-        return new Color(
+        return Color.ofRGB(
                 resultArray[1],
                 resultArray[2],
                 resultArray[3],

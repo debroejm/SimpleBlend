@@ -39,7 +39,7 @@ public class PixelScanner {
 
         for(int i = 0; i < data.length; i++) {
 
-            final Color pixel = new Color(data[i]);
+            final Color pixel = Color.ofRGB(data[i]);
 
             if(pixel.getAlpha() < 0.01f)
                 continue;

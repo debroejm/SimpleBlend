@@ -5,10 +5,10 @@ package debroejm.simpleblend;
  */
 public enum Channel {
 
-    ALPHA(new Color(0.0f, 0.0f, 0.0f, 1.0f)),
-    RED  (new Color(1.0f, 0.0f, 0.0f, 1.0f)),
-    GREEN(new Color(0.0f, 1.0f, 0.0f, 1.0f)),
-    BLUE (new Color(0.0f, 0.0f, 1.0f, 1.0f));
+    ALPHA(Color.ofRGB(0xFF000000)),
+    RED  (Color.ofRGB(0xFFFF0000)),
+    GREEN(Color.ofRGB(0xFF00FF00)),
+    BLUE (Color.ofRGB(0xFF0000FF));
 
     private final Color color;
     Channel(final Color color) {
