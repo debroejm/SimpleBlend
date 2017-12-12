@@ -2,6 +2,7 @@ package debroejm.simpleblend.curve;
 
 import debroejm.simpleblend.util.ExponentialFunction;
 
+import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -14,8 +15,11 @@ public class ColorCurve {
         return value < lower ? lower : (value > upper ? upper : value);
     }
 
-    private class Point implements Cloneable {
-        final float value, weight;
+    /**
+     * Data class for curve points. Provides public access for y values and weights.
+     */
+    public final class Point implements Cloneable {
+        public final float value, weight;
         ExponentialFunction function = null;
         Point(final float value, final float weight) {
             this.value = value; this.weight = weight;
@@ -76,6 +80,16 @@ public class ColorCurve {
      */
     public void clear() {
         points.clear();
+    }
+
+    /**
+     * Retrieves an unmodifiable map of Points, where the keys are x values, and the
+     * Point data objects contain the y values and weights.
+     *
+     * @return Unmodifiable map of point data
+     */
+    public Map<Float, Point> getPoints() {
+        return Collections.unmodifiableMap(points);
     }
 
     /**
