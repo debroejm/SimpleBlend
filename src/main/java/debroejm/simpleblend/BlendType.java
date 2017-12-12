@@ -78,4 +78,20 @@ public enum BlendType implements BlendAlgorithm {
     public float blend(Channel channel, float top, float bottom) {
         return channel == Channel.ALPHA ? bottom : algorithm.blend(channel, top, bottom);
     }
+
+    /**
+     * Attempts to determine a BlendType from a String value. If the String value is null
+     * or doesn't match a BlendType, returns <code>null</code>.
+     *
+     * @param string String value to match
+     * @return BlendType, or <code>null</code> if there is no match
+     */
+    public static BlendType fromString(String string) {
+        for(BlendType type : values()) {
+            if(type.toString().equalsIgnoreCase(string)) {
+                return type;
+            }
+        }
+        return null;
+    }
 }
